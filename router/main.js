@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 module.exports = function(app){
   app.get('/', function(req,res){
     res.render('index.html');
@@ -8,7 +10,14 @@ module.exports = function(app){
   app.post('/newpost', (req,res)=>{
     var title = req.body.title;
     var content = req.body.postContent;
-    console.log('title: ' + title);
-    console.log('content: ' + content);
+
+    fs.writeFile(`/public/post/${title}.txt`, content, 'utf8', function(err){
+      // response.writeHead(302, {Location: `/?id=${title}`});
+      // response.end();
+      console.log('title: ' + title);
+      console.log('content: ' + content);
+    });
+
+
   });
 }
