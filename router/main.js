@@ -14,8 +14,9 @@ module.exports = function(app){
     fs.writeFile(`/public/post/${title}.txt`, content, 'utf8', function(err){
       console.log('title: ' + title);
       console.log('content: ' + content);
-      response.writeHead(200);
-      response.end('success');
+		
+      res.writeHead(200);
+      res.end('success');
     });
 
 
