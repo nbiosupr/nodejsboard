@@ -11,7 +11,7 @@ module.exports = function(app){
     var title = req.body.title;
     var content = req.body.postContent;
 
-    fs.writeFile(`/public/post/${title}.txt`, content, 'utf8', function(err){
+    fs.writeFile(`public/post/${title}.txt`, content, 'utf8', function(err){
       console.log('title: ' + title);
       console.log('content: ' + content);
 		
