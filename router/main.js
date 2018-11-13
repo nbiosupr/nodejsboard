@@ -12,10 +12,10 @@ module.exports = function(app){
     var content = req.body.postContent;
 
     fs.writeFile(`/public/post/${title}.txt`, content, 'utf8', function(err){
-      // response.writeHead(302, {Location: `/?id=${title}`});
-      // response.end();
       console.log('title: ' + title);
       console.log('content: ' + content);
+      response.writeHead(200);
+      response.end('success');
     });
 
 
