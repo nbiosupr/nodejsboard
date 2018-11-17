@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="nodejsboard">
+      <div class="postListBox">
+        <ul>
+            <%for(var i=0;i<10;i++){%>
+                <% var postName = i; %>
+                <li>
+                    <a href="post/<%=postName%>">
+                        number <%=postName%>
+                    </a>
+                </li>
+            <%};%>
+        </ul>
+      </div>
+      <div class="functionBar">
+        <button type="button" class="functionButton" name="newPost" onclick="window.location.href='/newpost'">New</button>
+        <button type="button" class="functionButton" name="deletePost" >Delete</button>
+      </div>
+    </div>
+  </body>
+</html>

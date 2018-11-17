@@ -2,10 +2,10 @@ const fs = require('fs');
 
 module.exports = function(app){
   app.get('/', function(req,res){
-    res.render('index.html');
+    res.render('index.ejs');
   });
   app.get('/newpost', (req,res)=>{
-    res.render('newpost.html');
+    res.render('newpost.ejs');
   });
   app.post('/newpost', (req,res)=>{
     var title = req.body.title;
@@ -21,4 +21,4 @@ module.exports = function(app){
 
 
   });
-}
+};
