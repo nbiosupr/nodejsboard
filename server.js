@@ -8,6 +8,7 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 app.use(express.static(__dirname+'/public'));
+//body_parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
