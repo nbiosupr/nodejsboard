@@ -3,7 +3,7 @@ const func = require('../function/board');
 
 module.exports = function(app){
   app.get('/', function(req,res){
-    res.render('index.ejs', func.loadPostList());
+    res.render('index.ejs', {postList : func.loadPostList()});
   });
   app.get('/newpost', (req,res)=>{
     res.render('newpost.ejs');
