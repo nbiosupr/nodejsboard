@@ -1,5 +1,5 @@
 // const fs = require('fs');
-const func = require('function/board');
+const func = require('../function/board');
 
 module.exports = function(app){
   app.get('/', function(req,res){
