@@ -6,5 +6,9 @@ var loadPostList = function(){
 
   return postList;
 };
+
+function writePost(title, content){
+  //todo  
+};
 module.exports = loadPostList;
 
