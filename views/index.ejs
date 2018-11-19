@@ -11,15 +11,13 @@
     <div class="nodejsboard">
       <div class="postListBox">
         <ul>
-            <%console.log(postList); %>
-            <%for(var i=0;i<10;i++){%>
-                <% var postName = i; %>
+            <%postList.forEach(function(postName){%>
                 <li>
                     <a href="post/<%=postName%>">
-                        number <%=postName%>
+                        <%=postName%>
                     </a>
                 </li>
-            <%};%>
+            <%});%>
         </ul>
       </div>
       <div class="functionBar">
