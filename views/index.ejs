@@ -13,6 +13,7 @@
         <ul>
             <%postList.forEach(function(postName){%>
                 <li>
+                    <input type="checkbox" name="cb_<%=postName%>" value="<%=postName%>" hidden>
                     <a href="post/<%=postName%>">
                         <%=postName%>
                     </a>
@@ -23,6 +24,7 @@
       <div class="functionBar">
         <button type="button" class="functionButton" name="newPost" onclick="window.location.href='/newpost'">New</button>
         <button type="button" class="functionButton" name="deletePost" >Delete</button>
+        <button type="button" class="functionButton" name="deleteOk" hidden>Drop</button>
       </div>
     </div>
   </body>
