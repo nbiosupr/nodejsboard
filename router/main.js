@@ -1,5 +1,5 @@
 const fs = require('fs');
-const func = require('../function/board');
+const crud = require('../function/crud');
 
 module.exports = function(app){
   app.get('/', function(req,res){
