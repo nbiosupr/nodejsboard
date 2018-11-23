@@ -10,7 +10,7 @@ module.exports = function(){
         return postList;
     }
   
-    function creatPost(req, res){
+    function createPost(req, res){
         var title = req.body.title;
         var content = req.body.postContent;
 
