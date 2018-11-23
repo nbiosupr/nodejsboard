@@ -1,5 +1,5 @@
 const fs = require('fs');
-const crud = require('../function/crud');
+const crud = require('../middleware/crud');
 
 module.exports = function(app){
   app.get('/', function(req,res){
