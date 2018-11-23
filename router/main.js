@@ -3,23 +3,12 @@ const crud = require('../function/crud');
 
 module.exports = function(app){
   app.get('/', function(req,res){
-    res.render('index.ejs', {postList : func.loadPostList()});
+    res.render('index.ejs', {postList : crud.loadPostList()});
   });
   app.get('/newpost', (req,res)=>{
     res.render('newpost.ejs');
   });
   app.post('/newpost', (req,res)=>{
-    var title = req.body.title;
-    var content = req.body.postContent;
-
-    fs.writeFile(`public/post/${title}.txt`, content, 'utf8', function(err){
-      console.log('title: ' + title);
-      console.log('content: ' + content);
-
-      res.writeHead(200);
-      res.end('success');
-    });
-
-
+    crud.createPost(req,res);
   });
 };
