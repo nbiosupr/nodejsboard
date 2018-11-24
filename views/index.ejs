@@ -16,7 +16,7 @@
             <%postList.forEach(function(postName){%>
                 <li>
                     <input type="checkbox" class="cb_deletePost" name="cb_<%=postName%>" value="<%=postName%>" hidden="true">
-                    <a href="post/<%=postName%>">
+                    <a href="readpost?postid=<%=postName%>">
                         <%=postName%>
                     </a>
                 </li>
