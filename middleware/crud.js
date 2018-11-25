@@ -27,7 +27,13 @@ exports.readPost = function(req, res){
 };
 
 exports.updatePost = function(req, res){
-
+    var postId = req.body.postid;
+    fs.readFile(`${path}/${postId}`, (err, data)=>{
+        res.render('editpost.ejs', { postid : postId,    //게시물 식별번호
+                                     title : postId,     //게시물 제목
+                                     content : data});   //게시물 내용
+    });
+    
 };
 
 exports.deletePost = function(req, res){
