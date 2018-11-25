@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form class="" action="/editpost" method="post">
+        <div class="informationBox">
+          <input type="text" name="title" value="<%=title%>">
+        </div>
+        <div class="postBox">
+          <input type="text" name="postContent" value="<%=content%>">
+        </div>
+        <div class="functionBar">
+            <input type="submit" value="Post">
+        </div>
+        <input type="hidden" name="post_id" value="<%=postid%>">
+      </form>
+    </div>
+  </body>
+</html>
