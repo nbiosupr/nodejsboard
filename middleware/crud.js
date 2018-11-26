@@ -21,8 +21,9 @@ exports.createPost = function(req, res){
 exports.readPost = function(req, res){
     var postId = req.query.postid;
     fs.readFile(`${path}/${postId}`, (err, data)=>{
-        res.render('readpost.ejs', {title : postId,
-                                   content : data});
+        res.render('readpost.ejs', {postid : postId,
+                                    title : postId,
+                                    content : data});
     });
 };
 
