@@ -13,7 +13,7 @@ exports.createPost = function(req, res){
     var title = req.body.title;
     var content = req.body.postContent;
 
-    fs.writeFile(`${path}/${title}.txt`, content, 'utf8', function(err){
+    fs.writeFile(`${path}/${title}`, content, 'utf8', function(err){
         res.redirect(301, '/');
     });
 };
@@ -35,6 +35,26 @@ exports.updatePost = function(req, res){
                                      content : data});   //게시물 내용
     });
     
+};
+
+exports.updatePostProcess = function(req, res){
+    var postId = req.body.postid;
+    var title = req.body.title;
+    var content = req.body.content;
+    
+    if(postId!=title){
+        fs.rename(`${path}/${postId}`, `${path}/${title}`, (err) =>{
+            fs.writeFile(`${path}/${title}`, content, (err) => {
+               if (err) console.log('in line 48(rename and write): ' + err);
+                console.log('update post');
+            });
+        });
+    }else{
+        fs.writeFile(`${path}/${postId}`, content, (err) => {
+            if (err) console.log('in line 54(just write): ' + err);
+            console.log('update post');
+        });
+    }
 };
 
 exports.deletePost = function(req, res){
