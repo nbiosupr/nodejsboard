@@ -23,6 +23,6 @@ module.exports = function(app){
         crud.updatePost(req,res);
     });
     app.post('/updatepost', (req,res)=>{
-        
+        crud.updatePostProcess(req,res);
     });
 };
