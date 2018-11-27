@@ -62,6 +62,16 @@ exports.updatePostProcess = function(req, res){
 };
 
 exports.deletePost = function(req, res){
-    
+    /* 
+    1. receive post id
+    2. unlink
+    3. redirect
+    */
+    var postId = req.body.postid;
+    fs.unlink(`${path}/${postId}`,(err) => {
+        if (err) console.log('file delete error in delete post: ' + err);
+        console.log('delete file');
+        res.redirect(301, '/'); 
+    });
 };
 

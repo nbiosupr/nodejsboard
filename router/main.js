@@ -25,4 +25,9 @@ module.exports = function(app){
     app.post('/updatepost', (req,res)=>{
         crud.updatePostProcess(req,res);
     });
+    
+    //Route for Removing post
+    app.post('/deletepost', (req,res)=>{
+        crud.deletePost(req,res);
+    });
 };
