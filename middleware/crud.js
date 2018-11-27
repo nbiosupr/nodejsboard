@@ -47,14 +47,18 @@ exports.updatePostProcess = function(req, res){
             fs.writeFile(`${path}/${title}`, content, (err) => {
                if (err) console.log('in line 48(rename and write): ' + err);
                 console.log('update post');
+                res.redirect(301, '/');
             });
         });
     }else{
         fs.writeFile(`${path}/${postId}`, content, (err) => {
             if (err) console.log('in line 54(just write): ' + err);
             console.log('update post');
+            res.redirect(301, '/');
         });
     }
+    
+    
 };
 
 exports.deletePost = function(req, res){
